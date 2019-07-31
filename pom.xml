@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>mservice</groupId>
+        <artifactId>parent</artifactId>
+        <version>1.2.5</version>
+    </parent>
+    <artifactId>mservice-activity</artifactId>
+    <version>final</version>
+    <name>mservice-activity</name>
+    <packaging>pom</packaging>
+    <description>活动模块</description>
+
+    <modules>
+        <module>mservice-activity-web</module>
+        <module>mservice-activity-service</module>
+    </modules>
+
+    <properties>
+        <model.version>1.0.0</model.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>mservice</groupId>
+                <artifactId>mservice-activity-service</artifactId>
+                <!-- 这里的版本号和Service版本号保持一致 -->
+                <version>final</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
