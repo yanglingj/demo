@@ -20,4 +20,8 @@ public class Log {
         this.logPO = logPO;
         return this;
     }
+
+    public void createLog(){
+        logRepository.save(logPO);
+    }
 }

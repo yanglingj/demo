@@ -1,7 +1,7 @@
 package mservice.repository;
 
-import mservice.struct.ActivityPO;
+import mservice.struct.LogPO;
 import org.springframework.data.repository.CrudRepository;
 
-public interface LogRepository extends CrudRepository<ActivityPO,Integer> {
+public interface LogRepository extends CrudRepository<LogPO,Integer> {
 }
