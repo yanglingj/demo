@@ -1,6 +1,5 @@
 package mservice.struct;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -13,6 +12,7 @@ public class ActivityPO {
     private int id;
     private String name;
     private LocalDateTime localDateTime;
+    private byte type;
 
     public int getId() {
         return id;
@@ -36,5 +36,13 @@ public class ActivityPO {
 
     public void setLocalDateTime(LocalDateTime localDateTime) {
         this.localDateTime = localDateTime;
+    }
+
+    public byte getType() {
+        return type;
+    }
+
+    public void setType(byte type) {
+        this.type = type;
     }
 }

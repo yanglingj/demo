@@ -1,13 +1,11 @@
 package mservice.model.data;
 
+import mservice.common.ActivityTypeEnums;
 import mservice.repository.ActivityRepository;
 import mservice.struct.ActivityPO;
-import org.springframework.beans.factory.config.ConfigurableBeanFactory;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
-@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class Activity {
     private ActivityPO activityPO;
     private final ActivityRepository activityRepository;
@@ -19,5 +17,9 @@ public class Activity {
     public Activity build(ActivityPO activityPO){
         this.activityPO = activityPO;
         return this;
+    }
+
+    public ActivityTypeEnums getActivityType(){
+        return ActivityTypeEnums.getByType(this.activityPO.getType());
     }
 }

@@ -1,11 +1,10 @@
 package mservice.model.data;
 
-import org.springframework.beans.factory.config.ConfigurableBeanFactory;
-import org.springframework.context.annotation.Scope;
+import mservice.common.ActivityTypeEnums;
+import mservice.service.RadioCheckDataServiceImpl;
 import org.springframework.stereotype.Component;
 
 @Component
-@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class Check {
     private Activity activity;
     private Log log;
@@ -15,4 +14,15 @@ public class Check {
         this.log = log;
         return this;
     }
+
+    public Check checkData() {
+        //活动不同走不同的逻辑
+        if (activity.getActivityType().equals(ActivityTypeEnums.RADIO)) {
+            new RadioCheckDataServiceImpl()
+                    .activityCheck()
+                    .roleCheck();
+        }
+        return this;
+    }
+
 }
