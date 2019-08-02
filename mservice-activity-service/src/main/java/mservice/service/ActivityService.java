@@ -7,7 +7,6 @@ import mservice.model.role.Promoter;
 import org.springframework.stereotype.Service;
 
 import javax.inject.Provider;
-import javax.persistence.Id;
 
 
 @Service
@@ -24,11 +23,8 @@ public class ActivityService {
         this.log = log;
     }
 
-    public void promotionalActivity(int activityId,String accountId) {
-        Activity activity = provider.get();
-        activity.build(activity.findActivity(activityId));
-        check.build(activity, log)
-                .checkData();
-        promoter.promotionalActivity();
+    public void promotionalActivity(int activityId, String accountId,String helpAccountId) {
+        check.checkData(activityId,accountId);
+        promoter.promotionalActivity(activityId,accountId,helpAccountId);
     }
 }

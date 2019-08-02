@@ -24,4 +24,5 @@ public class Log {
     public void createLog(){
         logRepository.save(logPO);
     }
+
 }

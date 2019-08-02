@@ -1,14 +1,24 @@
 package mservice.service;
 
-public class RadioCheckDataServiceImpl implements CheckDataService{
-    @Override
-    public CheckDataService activityCheck() {
+import mservice.model.data.Activity;
+import org.springframework.stereotype.Service;
 
+@Service
+public class RadioCheckDataServiceImpl implements CheckDataService{
+    private final Activity activity;
+
+    public RadioCheckDataServiceImpl(Activity activity) {
+        this.activity = activity;
+    }
+
+    @Override
+    public CheckDataService activityCheck(int activityId) {
+        activity.findActivity(activityId);
         return this;
     }
 
     @Override
-    public CheckDataService roleCheck() {
+    public CheckDataService roleCheck(String accountId) {
 
         return this;
     }

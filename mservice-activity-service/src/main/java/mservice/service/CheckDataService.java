@@ -3,8 +3,8 @@ package mservice.service;
 public interface CheckDataService {
 
     //活动校验
-    public abstract CheckDataService activityCheck();
+    CheckDataService activityCheck(int activityId);
 
     //角色校验
-    public abstract CheckDataService roleCheck();
+    CheckDataService roleCheck(String accountId);
 }
