@@ -1,15 +1,15 @@
 package mservice.struct;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "log")
 public class LogPO {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    private Integer activityId;
     private String userAccountId;
     private String helpAccountId;
     private String picUrl;
@@ -23,6 +23,14 @@ public class LogPO {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Integer getActivityId() {
+        return activityId;
+    }
+
+    public void setActivityId(Integer activityId) {
+        this.activityId = activityId;
     }
 
     public String getUserAccountId() {

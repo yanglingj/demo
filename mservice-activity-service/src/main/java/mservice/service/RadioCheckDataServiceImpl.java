@@ -13,7 +13,6 @@ public class RadioCheckDataServiceImpl implements CheckDataService{
 
     @Override
     public CheckDataService activityCheck(int activityId) {
-        activity.findActivity(activityId);
         return this;
     }
 

@@ -31,7 +31,8 @@ public class Activity {
         activityStore.save(activityPO);
     }
 
-    public ActivityPO findActivity(int activityId) {
-        return activityStore.findActivity(activityId);
+    public Activity findActivity(int activityId) {
+        this.activityPO = activityStore.findActivity(activityId);
+        return this;
     }
 }
